@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="vue,实战," />
 
 
 
@@ -81,15 +81,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="1.打包的意义   webpack打包是为了将一个或多个js，css，scss，less等格式的文件打包成为&#x2F;dist中的js文件，也可以通过打包的方式将&#x2F;src里面的html文件打包至内存中（内存中的html页面会自动引用&#x2F;dist中的样式文件）   打包的好处是使浏览器能够识别一部分es6的新特性（比如static就处理不了），同时也避免了多个资源文件的重复调用。 2.打包的流程 1.下载必要">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://baiyangx.github.io/2020/06/27/hello-world/index.html">
+<meta property="og:title" content="webpack 打包流程">
+<meta property="og:url" content="https://baiyangx.github.io/2020/06/28/webpack-%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="article:published_time" content="2020-06-27T08:40:06.242Z">
-<meta property="article:modified_time" content="2020-06-27T08:40:06.242Z">
+<meta property="og:description" content="1.打包的意义   webpack打包是为了将一个或多个js，css，scss，less等格式的文件打包成为&#x2F;dist中的js文件，也可以通过打包的方式将&#x2F;src里面的html文件打包至内存中（内存中的html页面会自动引用&#x2F;dist中的样式文件）   打包的好处是使浏览器能够识别一部分es6的新特性（比如static就处理不了），同时也避免了多个资源文件的重复调用。 2.打包的流程 1.下载必要">
+<meta property="article:published_time" content="2020-06-28T12:28:04.000Z">
+<meta property="article:modified_time" content="2020-07-02T09:15:06.986Z">
 <meta property="article:author" content="Baiyangx">
+<meta property="article:tag" content="vue">
+<meta property="article:tag" content="实战">
 <meta name="twitter:card" content="summary">
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://baiyangx.github.io/2020/06/27/hello-world/"/>
+  <link rel="canonical" href="https://baiyangx.github.io/2020/06/28/webpack-打包流程/"/>
 
 
 
 
 
-  <title>Hello World | Hexo</title>
+  <title>webpack 打包流程 | Hexo</title>
   
 
 
@@ -263,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://baiyangx.github.io/2020/06/27/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://baiyangx.github.io/2020/06/28/webpack-%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Baiyangx">
@@ -280,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">webpack 打包流程</h1>
         
 
         <div class="post-meta">
@@ -292,8 +294,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-27T16:40:06+08:00">
-                2020-06-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-28T20:28:04+08:00">
+                2020-06-28
               </time>
             
 
@@ -308,12 +310,45 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-06-27T16:40:06+08:00">
-                2020-06-27
+              <time title="更新于" itemprop="dateModified" datetime="2020-07-02T17:15:06+08:00">
+                2020-07-02
               </time>
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF%EF%BC%8Cvue/" itemprop="url" rel="index">
+                    <span itemprop="name">前端，vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -342,19 +377,61 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <h3 id="1-打包的意义"><a href="#1-打包的意义" class="headerlink" title="1.打包的意义"></a>1.打包的意义</h3><p>   webpack打包是为了将一个或多个js，css，scss，less等格式的文件打包成为/dist中的js文件，也可以通过打包的方式将/src里面的html文件打包至内存中（内存中的html页面会自动引用/dist中的样式文件）</p>
+<p>  打包的好处是使浏览器能够识别一部分es6的新特性（比如static就处理不了），同时也避免了多个资源文件的重复调用。</p>
+<h3 id="2-打包的流程"><a href="#2-打包的流程" class="headerlink" title="2.打包的流程"></a>2.打包的流程</h3><ul>
+<li><p>1.下载必要的依赖文件 webpack，webpack-cli</p>
+</li>
+<li><p>2.首先创建项目文件—&gt;<code>npm init</code>创建package.json文件—&gt;创建/src文件，放入页面以及资源，创建/dist文件准备接受打包后的文件—&gt;此时可以通过 `webpack /src/xx.js -o /dist/xx.js  –mode development 实现指令打包，但更通常的做法是下载webpack-dev-server插件，实现自动打包，具体做法如下：</p>
+</li>
+</ul>
+<p>a.创建webpack配置文件webpack.config.js，在此文件中<code>require(&#39;path&#39;)</code>,然后在module.exports中写好打包入口文件和出口文件路径以及插件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry: path.join(__dirname, <span class="string">'./src/main.js'</span>), <span class="comment">//入口文件</span></span><br><span class="line">    output: &#123; <span class="comment">//指定输出选项</span></span><br><span class="line">        path: path.join(__dirname, <span class="string">'./dist'</span>), <span class="comment">//输出路径</span></span><br><span class="line">        filename: <span class="string">'bundle.js'</span> <span class="comment">//输出文件的名称  </span></span><br><span class="line">    &#125;,</span><br><span class="line">   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>b,在package.json文件中的”scripts”中写好dev指令，<code>&quot;dev&quot;: &quot;webpack-dev-server --open --port 3000 --contentBase src --hot&quot;</code></p>
+<p>这条指令表示在终端输入<code>npm run dev</code>之后会执行 webpack-dev-server，参数列表：</p>
+<p>–open 自动打开浏览器</p>
+<p>–port 3000 设置端口为3000</p>
+<p> –contentBase src 资源目录为 src</p>
+<p>–hot 热更(更改本地资源后，服务端自动刷新)</p>
+<p>c.至此，webpack自动打包配置完成</p>
+<ul>
+<li><p>3.还可以通过下载插件实现html文件打包至内存(好处是不需要本地存储html资源打包后生成的文件，而是直接放在内存中提供给浏览器，这样打包的速度更快，省资源 ，相当于放在了项目根目录中，就跟bundle.js一样)，插件名html-webpack-plugin，同样在webpack配置文件webpack.config.js中的module.exports 中配置</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">plugins: [ <span class="comment">//所有webpack插件的配置节点</span></span><br><span class="line">        <span class="keyword">new</span> htmlWebpackPlugin(&#123;</span><br><span class="line">                template: path.join(__dirname, <span class="string">'./src/index.html'</span>), <span class="comment">//指定模板路径</span></span><br><span class="line">                filename: <span class="string">'index.html'</span> <span class="comment">//设置生成的内存页面的名称</span></span><br><span class="line">            &#125;)</span><br><span class="line"></span><br><span class="line">        ]</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+</li>
+</ul>
+<h3 id="3-打包其他类型文件的方法"><a href="#3-打包其他类型文件的方法" class="headerlink" title="3.打包其他类型文件的方法"></a>3.打包其他类型文件的方法</h3><ul>
+<li><p>先下载合适的loader处理想打包的文件类型</p>
+</li>
+<li><p>继续在webpack配置文件webpack.config.js中的module.exports 中配置（例如打包css）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>:&#123;</span><br><span class="line">            rules: [</span><br><span class="line">                &#123; <span class="attr">test</span> :<span class="regexp">/\css$/</span>, <span class="attr">use</span>: [<span class="string">'style-loader'</span>,<span class="string">'css-loader'</span>]&#125;, <span class="comment">//处理css文件的loader</span></span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>css中的url也需要下载loader来处理，默认是处理不了的，配置方法如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">               test: <span class="regexp">/\.(jpg|png|gif|bmp|jpeg)$/</span>,</span><br><span class="line">               use: [<span class="string">'url-loader?limit=20000&amp;name=[hash:8]-[name].[ext]'</span>]</span><br><span class="line">               <span class="comment">//当图片大小大于limit的值时，单位（byte）不再进行base64转换</span></span><br><span class="line">           &#125;,</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="4-兼容高级语法"><a href="#4-兼容高级语法" class="headerlink" title="4.兼容高级语法"></a>4.兼容高级语法</h3><p>vue不支持某些es6的高级语法，需要通过babel来转换</p>
+<ul>
+<li><p>先装两套包 yarn add babel-core babel-loader babel-plugin-transform-runtime -D</p>
+</li>
+<li><p>yarn add babel-preset-env（语法包1，包含了es*各个版本的语法） babel-preset-stage-0（语法包2） -D</p>
+</li>
+<li><p>配置方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">                test: <span class="regexp">/\.js$/</span>,</span><br><span class="line">                use: <span class="string">'babel-loader'</span>,</span><br><span class="line">                exclude: <span class="regexp">/node_modules/</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//用babel处理js中的高级语法，必须把node_modules除外，原因是：</span></span><br><span class="line">            <span class="comment">//1.不排除，则babel会把node_modules所有的第三方js文件全都打包编译，及其占用cpu，同时打包速度非常慢</span></span><br><span class="line">            <span class="comment">//2.哪怕最终babel把所有node_modules转换完毕，项目也无法正常运行</span></span><br><span class="line">        ]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在项目根目录中创建。babelrc的配置文件，这个配置文件是json格式(变量名加双引号&amp;不支持注释)。</p>
+</li>
+</ul>
+<p>配置方法</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"presets"</span>: [<span class="string">"env"</span>,<span class="string">"stage-0"</span>],</span><br><span class="line">    <span class="attr">"plugins"</span>: [<span class="string">"transform-runtime"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>presets：语法包</p>
+<p>plugins：插件</p>
 
       
     </div>
@@ -375,7 +452,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://baiyangx.github.io/2020/06/27/hello-world/" title="Hello World">https://baiyangx.github.io/2020/06/27/hello-world/</a>
+    <a href="https://baiyangx.github.io/2020/06/28/webpack-%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/" title="webpack 打包流程">https://baiyangx.github.io/2020/06/28/webpack-%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -387,6 +464,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vue/" rel="tag"><i class="fa fa-tag"></i> vue</a>
+          
+            <a href="/tags/%E5%AE%9E%E6%88%98/" rel="tag"><i class="fa fa-tag"></i> 实战</a>
+          
+        </div>
       
 
       
@@ -400,14 +485,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2020/06/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" rel="next" title="我的第一篇文章">
+                <i class="fa fa-chevron-left"></i> 我的第一篇文章
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/06/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" rel="prev" title="我的第一篇文章">
-                我的第一篇文章 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/07/02/ES6%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA%E8%A7%84%E5%88%99/" rel="prev" title="ES6导入导出规则">
+                ES6导入导出规则 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -581,7 +670,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-打包的意义"><span class="nav-number">1.</span> <span class="nav-text">1.打包的意义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-打包的流程"><span class="nav-number">2.</span> <span class="nav-text">2.打包的流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-打包其他类型文件的方法"><span class="nav-number">3.</span> <span class="nav-text">3.打包其他类型文件的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-兼容高级语法"><span class="nav-number">4.</span> <span class="nav-text">4.兼容高级语法</span></a></li></ol></div>
             
 
           </div>
