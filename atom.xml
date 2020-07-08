@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://baiyangx.github.io/"/>
-  <updated>2020-07-02T09:31:52.343Z</updated>
+  <updated>2020-07-05T07:33:08.738Z</updated>
   <id>https://baiyangx.github.io/</id>
   
   <author>
@@ -15,6 +15,92 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>常用bootstrap样式整理</title>
+    <link href="https://baiyangx.github.io/2020/07/05/%E5%B8%B8%E7%94%A8bootstrap%E6%A0%B7%E5%BC%8F%E6%95%B4%E7%90%86/"/>
+    <id>https://baiyangx.github.io/2020/07/05/%E5%B8%B8%E7%94%A8bootstrap%E6%A0%B7%E5%BC%8F%E6%95%B4%E7%90%86/</id>
+    <published>2020-07-05T07:16:41.000Z</published>
+    <updated>2020-07-05T07:33:08.738Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1-bt3-table-boarder（带边框表格）&quot;&gt;&lt;a href=&quot;#1-bt3-table-boarder（带边框表格）&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://baiyangx.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="css" scheme="https://baiyangx.github.io/categories/%E5%89%8D%E7%AB%AF/css/"/>
+    
+      <category term="bootstrap" scheme="https://baiyangx.github.io/categories/%E5%89%8D%E7%AB%AF/css/bootstrap/"/>
+    
+    
+      <category term="css" scheme="https://baiyangx.github.io/tags/css/"/>
+    
+      <category term="bootstrap" scheme="https://baiyangx.github.io/tags/bootstrap/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES6语法学习记录</title>
+    <link href="https://baiyangx.github.io/2020/07/02/ES6%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    <id>https://baiyangx.github.io/2020/07/02/ES6%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</id>
+    <published>2020-07-02T10:35:36.000Z</published>
+    <updated>2020-07-08T09:51:54.514Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1-使用class实现面向对象编程&quot;&gt;&lt;a href=&quot;#1-使用class实现面向对象编程&quot; class=&quot;headerlink&quot; title=&quot;1.使用class实现面向对象编程&quot;&gt;&lt;/a&gt;1.使用class实现面向对象编程&lt;/h3&gt;&lt;h4 id=&quot;1-1创建一个类&quot;&gt;&lt;a href=&quot;#1-1创建一个类&quot; class=&quot;headerlink&quot; title=&quot;1.1创建一个类&quot;&gt;&lt;/a&gt;1.1创建一个类&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;在class的{}作用域中只能写constructor函数，静态方法，静态属性，实例方法。&lt;/li&gt;
+&lt;li&gt;在class中，必须有一个constructor，如果不写，系统会默认提供一个不可见的constructor，如果用户显示定义，就会覆盖整个默认方法。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Person&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//每当new Person(),都会调用constructor函数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;constructor&lt;/span&gt;(name,age)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.name = name&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.age = age&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; info = &lt;span class=&quot;string&quot;&gt;&#39;这是静态属性&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; 	&lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; show()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;这是静态方法&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;name，age都是实例属性，只能通过实例来访问&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;比如 var p1=new Person(‘zs’,22)&lt;/p&gt;
+&lt;p&gt;p1.name=’zs’&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;有时候Person对象也会挂载一些属性，比如info ，称为静态属性，需要用static关键字定义。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;静态方法与静态属性类似。也是只能通过Person对象访问。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;如果实例对象需要一些公共的方法，以往的做法是定义到prototype上，例子如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Per&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;name,age&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.name = name&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.age = age&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Per.prototype.showName = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;我是：&#39;&lt;/span&gt;+&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.name)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//由Per实例化产生的对象都可以调用showName方法&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ES6里的做法是直接在class类里面添加 这个方法（和静态方法的区别是不用static关键字修饰），称为实例方法。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;静态方法不能访问到this指向的属性，而实例方法可以。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://baiyangx.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="js" scheme="https://baiyangx.github.io/categories/%E5%89%8D%E7%AB%AF/js/"/>
+    
+      <category term="语法" scheme="https://baiyangx.github.io/categories/%E5%89%8D%E7%AB%AF/js/%E8%AF%AD%E6%B3%95/"/>
+    
+    
+      <category term="js" scheme="https://baiyangx.github.io/tags/js/"/>
+    
+      <category term="ES6" scheme="https://baiyangx.github.io/tags/ES6/"/>
+    
+  </entry>
   
   <entry>
     <title>node版本太高的解决办法</title>
@@ -51,7 +137,7 @@
     <link href="https://baiyangx.github.io/2020/07/02/ES6%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA%E8%A7%84%E5%88%99/"/>
     <id>https://baiyangx.github.io/2020/07/02/ES6%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA%E8%A7%84%E5%88%99/</id>
     <published>2020-07-02T09:16:19.000Z</published>
-    <updated>2020-07-02T09:37:40.040Z</updated>
+    <updated>2020-07-04T00:47:13.208Z</updated>
     
     <summary type="html">
     
@@ -69,9 +155,11 @@
     </summary>
     
     
-      <category term="js" scheme="https://baiyangx.github.io/categories/js/"/>
+      <category term="前端" scheme="https://baiyangx.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="语法" scheme="https://baiyangx.github.io/categories/js/%E8%AF%AD%E6%B3%95/"/>
+      <category term="js" scheme="https://baiyangx.github.io/categories/%E5%89%8D%E7%AB%AF/js/"/>
+    
+      <category term="语法" scheme="https://baiyangx.github.io/categories/%E5%89%8D%E7%AB%AF/js/%E8%AF%AD%E6%B3%95/"/>
     
     
       <category term="js" scheme="https://baiyangx.github.io/tags/js/"/>
@@ -85,29 +173,24 @@
     <link href="https://baiyangx.github.io/2020/06/28/webpack-%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/"/>
     <id>https://baiyangx.github.io/2020/06/28/webpack-%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/</id>
     <published>2020-06-28T12:28:04.000Z</published>
-    <updated>2020-07-02T09:15:06.986Z</updated>
+    <updated>2020-07-08T09:52:28.607Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h3 id=&quot;1-打包的意义&quot;&gt;&lt;a href=&quot;#1-打包的意义&quot; class=&quot;headerlink&quot; title=&quot;1.打包的意义&quot;&gt;&lt;/a&gt;1.打包的意义&lt;/h3&gt;&lt;p&gt;  
-        
-      
+      &lt;h3 id=&quot;1-打包的意义&quot;&gt;&lt;a href=&quot;#1-打包的意义&quot; class=&quot;headerlink&quot; title=&quot;1.打包的意义&quot;&gt;&lt;/a&gt;1.打包的意义&lt;/h3&gt;&lt;p&gt;   webpack打包是为了将一个或多个js，css，scss，less等格式的文件打包成为/dist中的js文件，也可以通过打包的方式将/src里面的html文件打包至内存中（内存中的html页面会自动引用/dist中的样式文件）&lt;/p&gt;
+&lt;p&gt;  打包的好处是使浏览器能够识别一部分es6的新特性（比如static就处理不了），同时也避免了多个资源文件的重复调用。&lt;/p&gt;
     
     </summary>
     
     
       <category term="前端" scheme="https://baiyangx.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="前端，vue" scheme="https://baiyangx.github.io/categories/%E5%89%8D%E7%AB%AF%EF%BC%8Cvue/"/>
+      <category term="webpack" scheme="https://baiyangx.github.io/categories/%E5%89%8D%E7%AB%AF/webpack/"/>
     
-    
-      <category term="vue" scheme="https://baiyangx.github.io/tags/vue/"/>
     
       <category term="实战" scheme="https://baiyangx.github.io/tags/%E5%AE%9E%E6%88%98/"/>
+    
+      <category term="webpack" scheme="https://baiyangx.github.io/tags/webpack/"/>
     
   </entry>
   
@@ -136,29 +219,6 @@
       <category term="标签1" scheme="https://baiyangx.github.io/tags/%E6%A0%87%E7%AD%BE1/"/>
     
       <category term="标签2" scheme="https://baiyangx.github.io/tags/%E6%A0%87%E7%AD%BE2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://baiyangx.github.io/2020/06/27/hello-world/"/>
-    <id>https://baiyangx.github.io/2020/06/27/hello-world/</id>
-    <published>2020-06-27T08:40:06.242Z</published>
-    <updated>2020-06-27T08:40:06.242Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
-        
-      
-    
-    </summary>
-    
-    
     
   </entry>
   
