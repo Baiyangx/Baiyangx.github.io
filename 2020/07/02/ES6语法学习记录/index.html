@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1.使用class实现面向对象编程1.1创建一个类 在class的{}作用域中只能写constructor函数，静态方法，静态属性，实例方法。 在class中，必须有一个constructor，如果不写，系统会默认提供一个不可见的constructor，如果用户显示定义，就会覆盖整个默认方法。  1234567891011class Person&amp;#123;    &#x2F;&#x2F;每当new Person()">
 <meta property="article:published_time" content="2020-07-02T10:35:36.000Z">
-<meta property="article:modified_time" content="2020-07-08T09:51:54.514Z">
+<meta property="article:modified_time" content="2020-07-29T15:13:15.418Z">
 <meta property="article:author" content="Baiyangx">
 <meta property="article:tag" content="js">
 <meta property="article:tag" content="ES6">
@@ -310,8 +310,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-07-08T17:51:54+08:00">
-                2020-07-08
+              <time title="更新于" itemprop="dateModified" datetime="2020-07-29T23:13:15+08:00">
+                2020-07-29
               </time>
             
           </span>
@@ -469,6 +469,85 @@
 <blockquote>
 <p>this指向问题&amp;箭头函数格式问题 参考： [ES6箭头函数中this的理解][<a href="https://blog.csdn.net/weixin_41993254/article/details/106630910]" target="_blank" rel="noopener">https://blog.csdn.net/weixin_41993254/article/details/106630910]</a></p>
 </blockquote>
+<h3 id="4-闭包"><a href="#4-闭包" class="headerlink" title="4.闭包"></a>4.闭包</h3><h4 id="4-1-概念"><a href="#4-1-概念" class="headerlink" title="4.1 概念"></a>4.1 概念</h4><p>  函数和对其周围状态（lexical environment，词法环境）的引用捆绑在一起构成闭包（closure）。也就是说，闭包可以让你从内部函数访问外部函数作用域。在 JavaScript 中，每当函数被创建，就会在函数生成时生成闭包。</p>
+<p>[MDN中关于闭包的解读][<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures]" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures]</a></p>
+<h4 id="4-2-应用场景"><a href="#4-2-应用场景" class="headerlink" title="4.2 应用场景"></a>4.2 应用场景</h4><ul>
+<li><p>1.在外部获取函数中的变量 2.根据传入值的不同，创建多个函数（函数工厂），用这种方生成的多个函数，共享相同的函数定义，但是保存了不同的词法环境。类似的，还能根据传入值的不同，生成多个点击事件。</p>
+</li>
+<li><p>2.匿名闭包：在循环绑定事件对象时，将循环体用立即执行函数包裹，也能达到闭包的效果，此时每个回调函数的绑定都对应一个循环变量。</p>
+</li>
+</ul>
+<ul>
+<li>3.模拟私有方法：返回多个公共函数对象，在外部可以通过点选函数名来使用这些函数对象，从而实现对私有变量的修改。</li>
+</ul>
+<ul>
+<li>4.为函数的回调创建新的词法环境，正常情况下，回调函数会在循环绑定事件结束后进行调用，这样就会导致所有的回调函数都共享了最后一次循环的词法还环境，用闭包可以避免这一点<br>使用注意：1.闭包会造成额外的性能损耗，所以不是为了特定的目的，应避免使用闭包，比如需要开放内部数据时，用闭包虽然能达到效果，但更建议将返回数据的方法定义在原型上</li>
+</ul>
+<h3 id="5-原型链"><a href="#5-原型链" class="headerlink" title="5.原型链"></a>5.原型链</h3><p>每个实例对象（ object ）都有一个私有属性（称之为 <strong>proto</strong> ）指向它的构造函数的原型对象（prototype ）。该原型对象也有一个自己的原型对象( <strong>proto</strong> ) ，层层向上直到一个对象的原型对象为 null。根据定义，null 没有原型，并作为这个原型链中的最后一个环节。</p>
+<p>几乎所有 JavaScript 中的对象都是位于原型链顶端的 Object 的实例</p>
+<h3 id="6-var-let-const的区别"><a href="#6-var-let-const的区别" class="headerlink" title="6.var let const的区别"></a>6.var let const的区别</h3><table>
+<thead>
+<tr>
+<th>声明方式</th>
+<th>变量提升</th>
+<th>暂时性死区</th>
+<th>重复声明</th>
+<th>初始值</th>
+<th>作用域</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>var</td>
+<td>允许</td>
+<td>不存在</td>
+<td>允许</td>
+<td>不需要</td>
+<td>除块级</td>
+</tr>
+<tr>
+<td>let</td>
+<td>不允许</td>
+<td>存在</td>
+<td>不允许</td>
+<td>不需要</td>
+<td>块级</td>
+</tr>
+<tr>
+<td>const</td>
+<td>不允许</td>
+<td>存在</td>
+<td>不允许</td>
+<td>需要</td>
+<td>块级</td>
+</tr>
+<tr>
+<td>- 变量提升的含义：变量的声明可以在访问之后，比如console.log(i);var i=1,正常输出不报错，结果是undefine，（变量的赋值不存在提升，等效于 var i;console.log(i);i=1;）,但是换成其他两种声明方法就会直接报错。</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- 暂时性死区： 如果在区块内用let或者const声明了某个变量。这个变量会被锁定在这个区块中（即使外层有这个变量的声明，但在块作用域中访问到的始终是内层声明的变量）</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>var tmp = 123;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>if (true) {<br>   tmp = ‘abc’;//报错，Uncaught ReferenceError: tmp is not defined<br>   let tmp;<br>}<br>- 重复声明：指的是相同作用域内，let const声明过的变量不允许重复声明<br>- 初始值： const声明的是只读变量。所以声明时需要初始值<br>- 作用域： var声明的变量只有函数作用域和全局作用域，有时候会出现块内外的变量覆盖，典型的比如for循环，用于计数的变量i会泄露，还有if条件语句，根据不同情况对外层变量赋值，可能会发生覆盖。<br>var tmp = new Date();//处于全局作用域</p>
+<p>function f() {<br> console.log(tmp);//处于函数作用域<br> if (false) {<br>  var tmp = ‘hello world’;<br> }<br>}</p>
+<p>f(); // undefined</p>
 
       
     </div>
@@ -615,7 +694,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -707,7 +786,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-使用class实现面向对象编程"><span class="nav-number">1.</span> <span class="nav-text">1.使用class实现面向对象编程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1创建一个类"><span class="nav-number">1.1.</span> <span class="nav-text">1.1创建一个类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-父类与子类"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 父类与子类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-根据索引删除元素"><span class="nav-number">2.</span> <span class="nav-text">2.根据索引删除元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-简单的搜索关键字"><span class="nav-number">3.</span> <span class="nav-text">3.简单的搜索关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-老方法indexOf"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 老方法indexOf</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-include"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 include</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-filter"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 filter</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-使用class实现面向对象编程"><span class="nav-number">1.</span> <span class="nav-text">1.使用class实现面向对象编程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1创建一个类"><span class="nav-number">1.1.</span> <span class="nav-text">1.1创建一个类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-父类与子类"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 父类与子类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-根据索引删除元素"><span class="nav-number">2.</span> <span class="nav-text">2.根据索引删除元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-简单的搜索关键字"><span class="nav-number">3.</span> <span class="nav-text">3.简单的搜索关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-老方法indexOf"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 老方法indexOf</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-include"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 include</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-filter"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 filter</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-闭包"><span class="nav-number">4.</span> <span class="nav-text">4.闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-概念"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-应用场景"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 应用场景</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-原型链"><span class="nav-number">5.</span> <span class="nav-text">5.原型链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-var-let-const的区别"><span class="nav-number">6.</span> <span class="nav-text">6.var let const的区别</span></a></li></ol></div>
             
 
           </div>
