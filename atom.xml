@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://baiyangx.github.io/"/>
-  <updated>2020-07-29T15:15:33.798Z</updated>
+  <updated>2020-07-30T14:36:24.532Z</updated>
   <id>https://baiyangx.github.io/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>弹性盒模型要点备忘</title>
+    <link href="https://baiyangx.github.io/2020/07/30/%E5%BC%B9%E6%80%A7%E7%9B%92%E6%A8%A1%E5%9E%8B%E8%A6%81%E7%82%B9%E5%A4%87%E5%BF%98/"/>
+    <id>https://baiyangx.github.io/2020/07/30/%E5%BC%B9%E6%80%A7%E7%9B%92%E6%A8%A1%E5%9E%8B%E8%A6%81%E7%82%B9%E5%A4%87%E5%BF%98/</id>
+    <published>2020-07-30T14:25:53.000Z</published>
+    <updated>2020-07-30T14:36:24.532Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;flex布局&quot;&gt;&lt;a href=&quot;#flex布局&quot; class=&quot;headerlink&quot; title=&quot;flex布局&quot;&gt;&lt;/a&gt;flex布局&lt;/h3&gt;&lt;h4 id=&quot;1-基本特点&quot;&gt;&lt;a href=&quot;#1-基本特点&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://baiyangx.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="css" scheme="https://baiyangx.github.io/categories/%E5%89%8D%E7%AB%AF/css/"/>
+    
+      <category term="flex弹性盒模型" scheme="https://baiyangx.github.io/categories/%E5%89%8D%E7%AB%AF/css/flex%E5%BC%B9%E6%80%A7%E7%9B%92%E6%A8%A1%E5%9E%8B/"/>
+    
+    
+      <category term="css" scheme="https://baiyangx.github.io/tags/css/"/>
+    
+      <category term="flex布局" scheme="https://baiyangx.github.io/tags/flex%E5%B8%83%E5%B1%80/"/>
+    
+  </entry>
   
   <entry>
     <title>项目中接触到的设计思想</title>
@@ -77,7 +110,7 @@
     <link href="https://baiyangx.github.io/2020/07/02/ES6%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
     <id>https://baiyangx.github.io/2020/07/02/ES6%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</id>
     <published>2020-07-02T10:35:36.000Z</published>
-    <updated>2020-07-29T15:13:15.418Z</updated>
+    <updated>2020-07-30T14:24:36.620Z</updated>
     
     <summary type="html">
     

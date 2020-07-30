@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1.使用class实现面向对象编程1.1创建一个类 在class的{}作用域中只能写constructor函数，静态方法，静态属性，实例方法。 在class中，必须有一个constructor，如果不写，系统会默认提供一个不可见的constructor，如果用户显示定义，就会覆盖整个默认方法。  1234567891011class Person&amp;#123;    &#x2F;&#x2F;每当new Person()">
 <meta property="article:published_time" content="2020-07-02T10:35:36.000Z">
-<meta property="article:modified_time" content="2020-07-29T15:13:15.418Z">
+<meta property="article:modified_time" content="2020-07-30T14:24:36.620Z">
 <meta property="article:author" content="Baiyangx">
 <meta property="article:tag" content="js">
 <meta property="article:tag" content="ES6">
@@ -310,8 +310,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-07-29T23:13:15+08:00">
-                2020-07-29
+              <time title="更新于" itemprop="dateModified" datetime="2020-07-30T22:24:36+08:00">
+                2020-07-30
               </time>
             
           </span>
@@ -548,6 +548,39 @@
 <p>if (true) {<br>   tmp = ‘abc’;//报错，Uncaught ReferenceError: tmp is not defined<br>   let tmp;<br>}<br>- 重复声明：指的是相同作用域内，let const声明过的变量不允许重复声明<br>- 初始值： const声明的是只读变量。所以声明时需要初始值<br>- 作用域： var声明的变量只有函数作用域和全局作用域，有时候会出现块内外的变量覆盖，典型的比如for循环，用于计数的变量i会泄露，还有if条件语句，根据不同情况对外层变量赋值，可能会发生覆盖。<br>var tmp = new Date();//处于全局作用域</p>
 <p>function f() {<br> console.log(tmp);//处于函数作用域<br> if (false) {<br>  var tmp = ‘hello world’;<br> }<br>}</p>
 <p>f(); // undefined</p>
+<h3 id="7-null和undefine的区别"><a href="#7-null和undefine的区别" class="headerlink" title="7.null和undefine的区别"></a>7.null和undefine的区别</h3><h4 id="7-1-undefined"><a href="#7-1-undefined" class="headerlink" title="7.1 undefined"></a>7.1 undefined</h4><p>字面意思就是：未定义的值 。这个值的语义是，希望表示一个变量最原始的状态，而非人为操作的结果 。 这种原始状态会在以下 4 种场景中出现：<br>【1】声明了一个变量，但没有赋值<br>【2】访问对象上不存在的属性<br>【3】函数定义了形参，但没有传递实参<br>【4】使用 void 对表达式求值</p>
+<h4 id="7-2-null"><a href="#7-2-null" class="headerlink" title="7.2 null"></a>7.2 null</h4><p>null 的字面意思是：空值  。这个值的语义是，希望表示 一个对象被人为的重置为空对象，而非一个变量最原始的状态 。 在内存里的表示就是，栈中的变量没有指向堆中的内存对象。<br>当一个对象被赋值了null 以后，原来的对象在内存中就处于游离状态，GC 会择机回收该对象并释放内存。因此，如果需要释放某个对象，就将变量设置为 null，即表示该对象已经被清空，目前无效状态。</p>
+<p>typeof null== ‘object’<br>null 有属于自己的类型 Null，而不属于Object类型，typeof 之所以会判定为 Object 类型，是因为JavaScript 数据类型在底层都是以二进制的形式表示的，二进制的前三位为 0 会被 typeof 判断为对象类型，而 null 的二进制位恰好都是 0 ，因此，null 被误判断为 Object 类型。</p>
+<p>ECMAScript 规范认为，既然 null 和  undefined 的行为很相似，并且都表示 一个无效的值，那么它们所表示的内容也具有相似性，即有</p>
+<p>undefined == null; // true<br>不要试图通过转换数据类型来解释这个结论，因为：</p>
+<p>Number(null); // 0<br>Number(undefined); // NaN</p>
+<p>// 在比较相等性之前，null 没有被转换为其他类型<br>null== 0 ; //false</p>
+<h3 id="8-js中new做了哪些事情？"><a href="#8-js中new做了哪些事情？" class="headerlink" title="8. js中new做了哪些事情？"></a>8. js中new做了哪些事情？</h3><ul>
+<li><p>先理解想要创造一系列部分属性相同的对象，过程是：<br>1.在构造函数中，先声明一个临时对象<br>2.绑定这个临时对象的原型<br>3.在构造函数中return临时对象<br>4.在原型上定义公共属性</p>
+</li>
+<li><p>用new关键字构建构造函数简化了以上操作<br>1.在构造函数中直接使用this指向临时对象<br>2.构造函数名.prototype直接指向每个构建出来的对象的原型，不需要绑定了<br>3.不需要return了，new 构造函数直接返回构造出来的对象<br>4.原型的名字也被规定,统一用prototype表示</p>
+</li>
+<li><p>注意：构造函数中 <strong>this</strong> 关键字没有任何的值。<br><strong>this</strong> 的值在函数调用实例化对象(new object)时创建。即指向实例对象。</p>
+</li>
+</ul>
+<h3 id="9-promise对象"><a href="#9-promise对象" class="headerlink" title="9.promise对象"></a>9.promise对象</h3><h4 id="9-1-定义"><a href="#9-1-定义" class="headerlink" title="9.1 定义"></a>9.1 定义</h4><p>promise是通过new promise(function(resolve,reject){…})构造出来的一个对象，构造函数的两个参数分别是resolve和reject。它们是两个函数，由 JavaScript 引擎提供，不用自己部署。</p>
+<h4 id="9-2-构造函数的参数"><a href="#9-2-构造函数的参数" class="headerlink" title="9.2 构造函数的参数"></a>9.2 构造函数的参数</h4><p>resolve函数的作用是，将Promise对象的状态从“未完成”变为“成功”（即从 pending 变为 resolved），在异步操作成功时调用，并将异步操作的结果，作为参数传递出去；reject函数的作用是，将Promise对象的状态从“未完成”变为“失败”（即从 pending 变为 rejected），在异步操作失败时调用，并将异步操作报出的错误，作为参数传递出去。</p>
+<h4 id="9-3-promise实例对象的方法"><a href="#9-3-promise实例对象的方法" class="headerlink" title="9.3 promise实例对象的方法"></a>9.3 promise实例对象的方法</h4><p>promise实例生成以后，可以用then方法分别指定resolved状态和rejected状态的回调函数（value和err），当promise对象的状态从pending转为确定态之后，then方法绑定的回调函数就会被触发。<br>可让一个函数返回一个promise对象，使其拥有异步的功能。（用这种方法定义的函数调用后可以之间使用.then方法）</p>
+<ul>
+<li><p>注意：.reject是Promise构造函数的方法，返回一个带有拒绝原因的Promise对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">resolved</span>(<span class="params">result</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Resolved'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">rejected</span>(<span class="params">result</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.error(result);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Promise</span>.reject(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'fail'</span>)).then(resolved, rejected);</span><br><span class="line"><span class="comment">// expected output: Error: fail</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>.catch是promise实例对象的方法，用于捕捉reject参数传回来的错误信息。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123; reject(<span class="string">"FAIL"</span>) &#125;)</span><br><span class="line">.catch(<span class="function">(<span class="params">reason</span>) =&gt;</span> &#123; <span class="built_in">console</span>.log(<span class="string">"THROW: "</span> + reason) &#125;)</span><br><span class="line"><span class="comment">//THROW: FAIL</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><strong><code>注意</code></strong> :promise是异步函数，若要修改异步函数中所使用的变量的值，在异步函数外层修改，会导致异步函数中使用的是修改过的值。原因是修改变量值这个操作写在异步函数之外，是一个同步操作，会比异步先执行，导致异步函数中还没调用该值，修改已经完成了</p>
 
       
     </div>
@@ -694,7 +727,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -705,7 +738,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
@@ -716,7 +749,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -786,7 +819,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-使用class实现面向对象编程"><span class="nav-number">1.</span> <span class="nav-text">1.使用class实现面向对象编程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1创建一个类"><span class="nav-number">1.1.</span> <span class="nav-text">1.1创建一个类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-父类与子类"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 父类与子类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-根据索引删除元素"><span class="nav-number">2.</span> <span class="nav-text">2.根据索引删除元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-简单的搜索关键字"><span class="nav-number">3.</span> <span class="nav-text">3.简单的搜索关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-老方法indexOf"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 老方法indexOf</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-include"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 include</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-filter"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 filter</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-闭包"><span class="nav-number">4.</span> <span class="nav-text">4.闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-概念"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-应用场景"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 应用场景</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-原型链"><span class="nav-number">5.</span> <span class="nav-text">5.原型链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-var-let-const的区别"><span class="nav-number">6.</span> <span class="nav-text">6.var let const的区别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-使用class实现面向对象编程"><span class="nav-number">1.</span> <span class="nav-text">1.使用class实现面向对象编程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1创建一个类"><span class="nav-number">1.1.</span> <span class="nav-text">1.1创建一个类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-父类与子类"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 父类与子类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-根据索引删除元素"><span class="nav-number">2.</span> <span class="nav-text">2.根据索引删除元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-简单的搜索关键字"><span class="nav-number">3.</span> <span class="nav-text">3.简单的搜索关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-老方法indexOf"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 老方法indexOf</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-include"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 include</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-filter"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 filter</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-闭包"><span class="nav-number">4.</span> <span class="nav-text">4.闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-概念"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-应用场景"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 应用场景</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-原型链"><span class="nav-number">5.</span> <span class="nav-text">5.原型链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-var-let-const的区别"><span class="nav-number">6.</span> <span class="nav-text">6.var let const的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-null和undefine的区别"><span class="nav-number">7.</span> <span class="nav-text">7.null和undefine的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#7-1-undefined"><span class="nav-number">7.1.</span> <span class="nav-text">7.1 undefined</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-2-null"><span class="nav-number">7.2.</span> <span class="nav-text">7.2 null</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-js中new做了哪些事情？"><span class="nav-number">8.</span> <span class="nav-text">8. js中new做了哪些事情？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-promise对象"><span class="nav-number">9.</span> <span class="nav-text">9.promise对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#9-1-定义"><span class="nav-number">9.1.</span> <span class="nav-text">9.1 定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-2-构造函数的参数"><span class="nav-number">9.2.</span> <span class="nav-text">9.2 构造函数的参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-3-promise实例对象的方法"><span class="nav-number">9.3.</span> <span class="nav-text">9.3 promise实例对象的方法</span></a></li></ol></li></ol></div>
             
 
           </div>
