@@ -29,6 +29,20 @@ layout: default
     </div>
   {% endif %}
 
+  {% if page.news %}
+    <div class="workshop-news">
+      <h2>Latest News</h2>
+      <div class="news-items">
+        {% for item in page.news %}
+          <div class="news-item">
+            <div class="news-date">{{ item.date }}</div>
+            <div class="news-content">{{ item.content }}</div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+
   {% if page.organizers %}
     <div class="organizers">
       <h2>Organizing Committee</h2>
@@ -71,6 +85,40 @@ layout: default
 
 .important-dates li {
   margin: 0.5rem 0;
+}
+
+.workshop-news {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 5px;
+}
+
+.news-items {
+  margin-top: 1rem;
+}
+
+.news-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.news-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.news-date {
+  font-weight: bold;
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+}
+
+.news-content {
+  line-height: 1.5;
 }
 
 .organizers {
