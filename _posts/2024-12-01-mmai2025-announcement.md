@@ -10,6 +10,7 @@ tags: [multimodal AI, IEEE, workshop]
 We are pleased to announce the 5th IEEE International Workshop on Multimodal AI (MMAI 2025), which will be held in conjunction with [Main Conference Name] in [City, Country] on June 15, 2025.
 
 ## Important Dates
+
 - Paper Submission Deadline: March 15, 2025
 - Notification of Acceptance: April 15, 2025
 - Camera-ready Deadline: May 1, 2025
@@ -22,6 +23,7 @@ The MMAI 2025 workshop aims to bring together researchers and practitioners work
 ## Topics of Interest
 
 We invite submissions on topics including, but not limited to:
+
 - Multimodal representation learning
 - Cross-modal understanding and generation
 - Multimodal fusion techniques
@@ -38,4 +40,4 @@ Papers should be submitted in IEEE format, with a maximum length of 8 pages (exc
 
 For more information, please visit our [workshop website](/workshop/) or contact us at mmai2025@example.com.
 
-We look forward to your submissions! 
+We look forward to your submissions!
