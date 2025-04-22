@@ -1,18 +1,34 @@
 ---
-layout: page
+layout: workshop
 title: Workshop Announcement
 permalink: /workshop/
-description: Call for Papers - [Workshop Name]
+description: Call for Papers - MMAI25
 logo: NSF_logo.svg
+
+important_dates:
+  - name: Paper Submission Deadline
+    date: TBD
+  - name: Notification of Acceptance
+    date: TBD
+  - name: Camera-ready Deadline
+    date: TBD
+  - name: Workshop Date
+    date: TBD
+
+organizers:
+  - title: Workshop Chairs
+    people:
+      - name: Chair 1
+        affiliation: Affiliation 1
+      - name: Chair 2
+        affiliation: Affiliation 2
+  - title: Program Committee
+    people:
+      - name: PC Member 1
+        affiliation: Affiliation 1
+      - name: PC Member 2
+        affiliation: Affiliation 2
 ---
-
-# [Workshop Name]
-
-## Important Dates
-- **Paper Submission Deadline**: [Date]
-- **Notification of Acceptance**: [Date]
-- **Camera-ready Deadline**: [Date]
-- **Workshop Date**: [Date]
 
 ## Workshop Overview
 
@@ -40,16 +56,6 @@ The workshop invites submissions on topics including, but not limited to:
 
 ### Review Process
 [Describe the review process and criteria]
-
-## Organizing Committee
-
-### Workshop Chairs
-- [Name], [Affiliation]
-- [Name], [Affiliation]
-
-### Program Committee
-- [Name], [Affiliation]
-- [Name], [Affiliation]
 
 ## Contact Information
 

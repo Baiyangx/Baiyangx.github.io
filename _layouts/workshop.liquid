@@ -1,0 +1,89 @@
+---
+layout: default
+---
+
+<div class="post">
+  <header class="post-header">
+    {% if page.logo %}
+      <div class="workshop-logo">
+        <img src="{{ page.logo | prepend: '/assets/img/' | relative_url }}" alt="Workshop Logo">
+      </div>
+    {% endif %}
+    
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-description">{{ page.description }}</p>
+  </header>
+
+  <article>
+    {{ content }}
+  </article>
+
+  {% if page.important_dates %}
+    <div class="important-dates">
+      <h2>Important Dates</h2>
+      <ul>
+        {% for date in page.important_dates %}
+          <li><strong>{{ date.name }}:</strong> {{ date.date }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
+  {% if page.organizers %}
+    <div class="organizers">
+      <h2>Organizing Committee</h2>
+      <div class="committee">
+        {% for role in page.organizers %}
+          <h3>{{ role.title }}</h3>
+          <ul>
+            {% for person in role.people %}
+              <li>{{ person.name }}, {{ person.affiliation }}</li>
+            {% endfor %}
+          </ul>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+<style>
+.workshop-logo {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.workshop-logo img {
+  max-height: 150px;
+  width: auto;
+}
+
+.important-dates {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 5px;
+  margin: 2rem 0;
+}
+
+.important-dates ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.important-dates li {
+  margin: 0.5rem 0;
+}
+
+.organizers {
+  margin: 2rem 0;
+}
+
+.committee {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.committee h3 {
+  margin-top: 0;
+}
+</style> 
